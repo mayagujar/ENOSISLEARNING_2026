@@ -1,0 +1,895 @@
+    <style>
+        .cool-link {
+            display: inline-block;
+            color: #fff;
+            text-decoration: none !important;
+        }
+
+            .cool-link::after {
+                content: '';
+                display: block;
+                width: 0;
+                height: 2px;
+                background: #000;
+                transition: width .3s;
+            }
+
+        .copyright {
+            text-align: center;
+        }
+
+        .cool-link:hover::after {
+            width: 100%;
+        }
+
+        .footLi li {
+            float: left !important;
+            margin-left: 6px;
+        }
+
+        .footer h6 {
+            text-align: left;
+        }
+
+        .footsec1 {
+            height: 50%;
+        }
+
+        .footsec2 {
+            height: 50%;
+        }
+
+        .foot ul li a {
+            color: white;
+        }
+
+        .nav-side-menu {
+            overflow: auto;
+            font-family: verdana;
+            font-size: 12px;
+            font-weight: 200;
+            background-color: #2e353d;
+            position: fixed;
+            top: 0px;
+            width: 300px;
+            height: 100%;
+            color: #e1ffff;
+        }
+
+            .nav-side-menu .brand {
+                background-color: #23282e;
+                line-height: 50px;
+                display: block;
+                text-align: center;
+                font-size: 14px;
+            }
+
+            .nav-side-menu .toggle-btn {
+                display: none;
+            }
+
+            .nav-side-menu ul,
+            .nav-side-menu li {
+                list-style: none;
+                padding: 0px;
+                margin: 0px;
+                line-height: 35px;
+                cursor: pointer;
+            }
+
+        .foot ul li {
+            text-align: left;
+        }
+
+        .nav-side-menu ul :not(collapsed) .arrow:before,
+        .nav-side-menu li :not(collapsed) .arrow:before {
+            font-family: FontAwesome;
+            content: "\f078";
+            display: inline-block;
+            padding-left: 10px;
+            padding-right: 10px;
+            vertical-align: middle;
+            float: right;
+        }
+
+        .nav-side-menu ul .active,
+        .nav-side-menu li .active {
+            border-left: 3px solid #d19b3d;
+            background-color: #4f5b69;
+        }
+
+        .nav-side-menu ul .sub-menu li.active,
+        .nav-side-menu li .sub-menu li.active {
+            color: #d19b3d;
+        }
+
+            .nav-side-menu ul .sub-menu li.active a,
+            .nav-side-menu li .sub-menu li.active a {
+                color: #d19b3d;
+            }
+
+        .nav-side-menu ul .sub-menu li,
+        .nav-side-menu li .sub-menu li {
+            background-color: #181c20;
+            border: none;
+            line-height: 28px;
+            border-bottom: 1px solid #23282e;
+            margin-left: 0px;
+        }
+
+            .nav-side-menu ul .sub-menu li:hover,
+            .nav-side-menu li .sub-menu li:hover {
+                background-color: #020203;
+            }
+
+            .nav-side-menu ul .sub-menu li:before,
+            .nav-side-menu li .sub-menu li:before {
+                font-family: FontAwesome;
+                content: "\f105";
+                display: inline-block;
+                padding-left: 10px;
+                padding-right: 10px;
+                vertical-align: middle;
+            }
+
+        .nav-side-menu li {
+            padding-left: 0px;
+            border-left: 3px solid #2e353d;
+            border-bottom: 1px solid #23282e;
+        }
+
+        .contact {
+            height: 67px;
+            padding: 11px 0 0 0;
+            line-height: 40px;
+            float: left;
+            width: 70%;
+        }
+
+        .nav-side-menu li a {
+            text-decoration: none;
+            color: #e1ffff;
+        }
+
+            .nav-side-menu li a i {
+                padding-left: 10px;
+                width: 20px;
+                padding-right: 20px;
+            }
+
+        .nav-side-menu li:hover {
+            border-left: 3px solid #d19b3d;
+            background-color: #4f5b69;
+            -webkit-transition: all 1s ease;
+            -moz-transition: all 1s ease;
+            -o-transition: all 1s ease;
+            -ms-transition: all 1s ease;
+            transition: all 1s ease;
+        }
+
+        @media (max-width: 767px) {
+            .nav-side-menu {
+                position: relative;
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+                .nav-side-menu .toggle-btn {
+                    display: block;
+                    cursor: pointer;
+                    position: absolute;
+                    right: 10px;
+                    top: 10px;
+                    z-index: 10 !important;
+                    padding: 3px;
+                    background-color: #ffffff;
+                    color: #000;
+                    width: 40px;
+                    text-align: center;
+                }
+
+            .brand {
+                text-align: left !important;
+                font-size: 22px;
+                padding-left: 20px;
+                line-height: 50px !important;
+            }
+        }
+
+        @media (min-width: 767px) {
+            .nav-side-menu .menu-list .menu-content {
+                display: block;
+            }
+        }
+
+        body {
+            margin: 0px;
+            padding: 0px;
+            background-color: red;
+        }
+
+        .modal-header {
+            min-height: 16.42857143px;
+            padding: 15px;
+            border-bottom: 1px solid #e5e5e5;
+            float: left;
+            width: 100%;
+            background: #006495;
+            color: white;
+        }
+
+        .close {
+            float: right;
+            font-size: 21px;
+            line-height: 1;
+            color: white;
+            opacity: 1;
+        }
+
+
+
+
+        @media screen and (max-width: 980px) {
+            .menu-btn {
+                display: flex;
+                justify-content: space-around;
+                width: 99vw;
+                padding: 0px 13px;
+                margin-right: -66px;
+                font-size: 8px;
+            }
+
+            .right-div {
+                margin-right: 107px;
+            }
+
+            .footsec2 {
+                margin-left: 16px;
+            }
+        }
+       /* .dropdown
+        {
+            width:200px;
+            height:400px;
+            background-color:red;
+        }*/
+       /* .submenus li a {
+            width:500px;
+            color: #006495;
+            text-align: center;
+            background-color: white;
+        }
+
+        .dropbtn {
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: #000;
+            padding: 14px 16px;
+            margin: 0;
+        }*/
+        /*style*/
+              ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Dropdown container */
+        .menu-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Dropdown button */
+        .menu-button {
+            display: block;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+        }
+
+        .menu-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Submenu container - hidden by default */
+        .menu-dropdown {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            min-width: 600px;
+            padding: 20px;
+            z-index: 1;
+            grid-template-columns: 1fr 1fr;
+            column-gap: -15px;
+            border-radius: 5px;
+        }
+
+        /* Show submenu on hover */
+        .menu-container:hover .menu-dropdown {
+            display: grid;
+            border-radius:0px;
+        }
+
+        /* Submenu items */
+        .menu-item {
+            list-style: none;
+            padding: 10px 0;
+            border-bottom: 0px solid #ddd;
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+
+        .menu-item a {
+            text-decoration: none;
+             color: #006495;
+            display: flex;
+           /* align-items: center;*/ /* Align text and icons vertically */
+            padding: 5px;
+            padding-bottom:0px;
+            font-size: 13px;
+            gap: 10px; /* Add space between icon and text */
+        }
+
+        .menu-item a:hover {
+            color: #007bff;
+        }
+
+        /* Icon styling */
+        .menu-icon {
+            flex-shrink: 0; /* Prevent icon from shrinking */
+            font-size: 16px;
+            color: #555;
+        }
+
+        .menu-item a:hover .menu-icon {
+            color: #007bff;
+        }
+        /*style*/
+          /* Dropdown container */
+  .menu-container2 {
+      position: relative;
+      display: inline-block;
+  }
+
+  /* Dropdown button */
+  .menu-button {
+      display: block;
+      padding: 10px 20px;
+      color: white;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+  }
+
+  .menu-button:hover {
+      background-color: #0056b3;
+  }
+
+  /* Submenu container - hidden by default */
+  .menu-dropdown2 {
+      display: none;
+      position: absolute;
+      background-color: #ffffff;
+      border: 1px solid #ccc;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      min-width: 430px;
+      padding: 20px;
+      z-index: 1;
+      grid-template-columns: 1fr 1fr;
+      column-gap: -15px;
+      border-radius: 5px;
+  }
+
+  /* Show submenu on hover */
+  .menu-container2:hover .menu-dropdown2 {
+      display: grid;
+      border-radius:0px;
+  }
+
+  /* Submenu items */
+  .menu-item2 {
+      list-style: none;
+      padding: 10px 0;
+      border-bottom: 0px solid #ddd;
+  }
+
+  .menu-item2:last-child {
+      border-bottom: none;
+  }
+
+  .menu-item2 a {
+      text-decoration: none;
+       color: #006495;
+      display: flex;
+     /* align-items: center;*/ /* Align text and icons vertically */
+      padding: 5px;
+      padding-bottom:0px;
+      font-size: 13px;
+      gap: 10px; /* Add space between icon and text */
+  }
+
+  .menu-item2 a:hover {
+      color: #007bff;
+      background-color:transparent;
+  }
+
+  /* Icon styling */
+  .menu-icon {
+      flex-shrink: 0; /* Prevent icon from shrinking */
+      font-size: 16px;
+      color: #555;
+  }
+
+  .menu-item2 a:hover .menu-icon {
+      color: #007bff;
+      background-color:none;
+  }
+        /*style*/
+        /*style2*/
+        
+       /* Parent container */
+        .dropdown-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Menu button */
+        .dropdown-button {
+            display: block;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+            border-radius: 0px;
+        }
+
+        .dropdown-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Dropdown menu (hidden by default) */
+        .dropdown-menu {
+            display: none;
+             position: absolute;
+             background-color: #ffffff;
+             border: 1px solid #ccc;
+             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+             min-width: 600px;
+             padding: 20px;
+             z-index: 1;
+             column-gap: -15px;
+             border-radius: 5px;
+            grid-template-columns: repeat(3, 1fr); /* Create 3 equal columns */
+            gap: 10px; /* Space between the columns */
+        }
+
+        /* Show dropdown on hover */
+        .dropdown-container:hover .dropdown-menu {
+            display: grid; /* Make visible on hover */
+        }
+
+        /* Dropdown items */
+        .dropdown-item {
+            margin: 5px 0;
+        }
+
+        .dropdown-item a {
+            text-decoration: none;
+            color: #d19b3d;
+            display: flex;
+            align-items: center;
+            gap: 15px; 
+            padding: 5px;
+            border-radius: 3px;
+        }
+
+        /* Icon styles */
+        .dropdown-icon {
+            flex-shrink: 0; /* Prevent icon from shrinking */
+             font-size: 16px;
+             color: #555;
+        }
+         /* Hover effect on anchor tags */
+#list a:hover {
+    color: white; /* Change text color on hover */
+}
+
+/* Hover effect on icon */
+.dropdown-item a:hover .dropdown-icon {
+    color: #007bff; /* Change icon color on hover */
+}
+        /*style2*/
+        .btn-outline-dark:hover
+        {
+            color : white;
+        }
+       /* .loginimg:hover
+        {
+            color:white;
+            background-color : #006495;
+        }*/
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<form data-toggle="validator" id="form1" runat="server">
+<div>
+
+<%--<div class="cal12:16 PM 04-09-2025ltoaction">--%>
+<div class="container-fluid">
+<div class="logo fl-lt left" >
+<a href="index.aspx" ><span class="enosis">enosis </span><span class="lrning">learning</span>
+</a>
+     <br />
+<a href="index.aspx" >
+<span class="creatng">Creating Software Professionals</span></a>
+
+</div>
+   
+  
+<div class="contact demo">
+<div class="pull-right">
+                           
+<div class="menu-btn">
+<a href="EnosisJobs.aspx" class="btn btn-warning" style="box-shadow: 1px 1px 3px 1px gray" ><span class="fa fa-graduation-cap"></span>&nbsp;Apply For Internship</a>                             
+<a href="EnosisJobs.aspx" class="btn btn-primary" style="background-color: #55acee;box-shadow: 1px 1px 3px 1px gray"" ><span class="fa fa-lightbulb-o"></span>&nbsp;Apply For Job</a>
+                            
+<a href="SubmitResume.aspx" class="btn btn-primary" style="background-color: #25d366; box-shadow: 1px 1px 3px 1px gray""><span class="fa fa-upload"></span>&nbsp;Upload Your Resume</a>
+                                
+                                
+    <a id="btnRDemo" href="#" class="btn btn-danger" style="box-shadow: 1px 1px 3px 1px gray"" data-toggle="modal" data-target="#myModal" target="_parent"><span class="fa fa-send"></span>&nbsp;Request For Demo</a>
+    <a href="https://api.whatsapp.com/send?phone=917757012052" class="btn btn-outline-dark" style=" background-color:#223d9c; width:130px; height:34px;box-shadow: 1px 1px 3px 1px gray"" > <img src="Images/whatsapp.png" style="width:20px;height:20px"/>&nbsp;7757012052</a>
+     <a href="Login.aspx" class="btn btn-outline-dark" style=" background-color:#006495; width:130px; height:34px;box-shadow: 1px 1px 3px 1px gray;" ><img src="Images/login7.png" class="loginimg" style="width:20px;height:20px;"/>&nbsp;&nbsp;Log-in</a>
+
+                                
+
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog">
+<div class="modal-dialog modal-sm">
+<div class="modal-content">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+<h2 class="modal-title" style="color:#000 !important; top: 0px!important;">Request For Demo</h2>
+<h6 style="color:red!important" runat="server" id="head6"></h6>
+</div>
+
+<div class="modal-body">
+<div class="form-horizontal">
+<div class="form-group">
+<div class="col-xs-12">
+<asp:TextBox CssClass="form-control my-form-control" ID="txtUserName" placeholder="Enter Full Name" runat="server" />
+</div>
+</div>
+<div class="form-group">
+<div class="col-xs-12">
+<asp:TextBox CssClass="form-control my-form-control" ID="txtEmailId" placeholder="Enter Your Email Id" runat="server" />
+</div>
+</div>
+<div class="form-group">
+<div class="col-xs-12">
+<asp:TextBox CssClass="form-control my-form-control" ID="txtUserContactNo" placeholder="Enter Your Mobile No" runat="server" />
+</div>
+</div>
+<div class="form-group">
+<div class="col-xs-12">
+<asp:DropDownList CssClass="form-control my-form-control" ID="drpDCourse" runat="server">
+
+
+
+</asp:DropDownList>
+</div>
+</div>
+</div>
+</div>
+<div class="modal-footer">
+<asp:Button ID="btnSend" OnClick="btnSend_Click" Text="Send" runat="server" class="btn btn-primary" />
+<button type="button" class="btn btn-default" data-dismiss="modal" style="background-color:#f89d0d">Cancel</button>
+
+</div>
+</div>
+<div class="clearfix"></div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+<div class="clearfix"></div>
+</div>
+<nav class="navbar my-navbar">
+<!-- Brand and toggle get grouped for better mobile display -->
+<div class="navbar-header">
+<button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+</div>
+    
+
+<!-- Collection of nav links and other content for toggling -->
+<div id="navbarCollapse" class="collapse navbar-collapse ">
+    <nav>
+<ul class="nav navbar-nav my-menubar" id="nav">
+<li id="lihome" runat="server"><a  href='Index.aspx'>Home</a></li>
+
+<%--<li class='active' id="liHome" runat="server"><a href='Index.aspx'>Home</a></li>--%>
+<%--<li class="dropdown" id="li1" runat="server"><a class="dropbtn" href='courses.aspx'>Courses</a>
+<ul id="courseMenu" class="submenus">--%>
+<%--<li><a href="FullStack-.Net-Training.aspx">Full Stack.Net Contents</a></li>
+<li><a href="FullStack-Java-Training.aspx">Full Stack Java Contents</a></li>
+<li><a href="Data-Analytics-Training.aspx">Data Analytics Contents</a></li>
+<li><a href=".Net_Core-Training.aspx">.Net Core Contents</a></li>
+<li><a href="sql-server-training.aspx">SQL SERVER Contents</a></li>
+<li><a href="power-bi-training.aspx">POWER BI Contents</a></li>
+<li><a href="c-training.aspx">C Language Contents</a></li>
+<li><a href="c++-training.aspx">C++ Language Contents</a></li>
+<li><a href="web-designing-course.aspx">Web Designing Contents</a></li>--%>
+
+<%-- GridView Courses Menu --%>
+    <%--<li data-course="5"><a href="DotNet.aspx">Full Stack.Net Contents</a></li>
+    <li data-course="20"><a href="Java.aspx">Full Stack Java Contents</a></li>
+    <li data-course="29"><a href="DataAnalytic.aspx">Data Analytics Contents</a></li>
+    <li data-course="30"><a href="DotNetCore.aspx">.Net Core Contents</a></li>
+    <li data-course="6"><a href="Sql.aspx">SQL SERVER Contents</a></li>
+    <li data-course="25"><a href="PowerBI.aspx">POWER BI Contents</a></li>
+    <li data-course="1"><a href="C.aspx">C Language Contents</a></li>
+    <li data-course="2"><a href="C++.aspx">C++ Language Contents</a></li>
+    <li data-course="8"><a href="WebDesign.aspx">Web Designing Contents</a></li>--%>
+<li class="menu-container" id="li1" runat="server">
+            <a class="menu-button" href="courses.aspx">Courses</a>
+            <ul id="courseMenu" class="menu-dropdown">
+                <li data-course="5" class="menu-item">
+                    <a href="DotNet.aspx"><span class="menu-icon">💻</span>Full Stack .Net Contents</a>
+                </li>
+                <li data-course="20" class="menu-item" style="position:relative;left:-2px;">
+                    <a href="Java.aspx"><span class="menu-icon">☕</span>Full Stack Java Contents</a>
+                </li>
+                <li data-course="29" class="menu-item" style="position:relative;left:-2px;">
+                    <a href="DataAnalytic.aspx"><span class="menu-icon">📊</span>Data Analytics Contents</a>
+                </li>
+                <li data-course="30" class="menu-item" style="position:relative;left:-26px;">
+                    <a href="DotNetCore.aspx"><span class="menu-icon">⚙️</span>.Net Core Contents</a>
+                </li>
+                <li data-course="6" class="menu-item" style="position:relative;left:-16px;">
+                    <a href="Sql.aspx"><span class="menu-icon">🗄️</span>SQL Server Contents</a>
+                </li>
+                <li data-course="25" class="menu-item" style="position:relative;left:-28px;">
+                    <a href="PowerBI.aspx"><span class="menu-icon">📈</span>Power BI Contents</a>
+                </li>
+                <li data-course="1" class="menu-item" style="position:relative;left:-14px;">
+                    <a href="C.aspx"><span class="menu-icon">🔤</span>C Language Contents</a>
+                </li>
+                <li data-course="2" class="menu-item" style="position:relative;left:-8px;">
+                    <a href="C++.aspx"><span class="menu-icon">🔢</span>C++ Language Contents</a>
+                </li>
+                <li data-course="8" class="menu-item" style="position:relative;left:-5px;">
+                    <a href="WebDesign.aspx"><span class="menu-icon">🎨</span>Web Designing Contents</a>
+                </li>
+            </ul>
+        </li>
+<%-- GridView Courses Menu --%>
+<li id="liTutorials" runat="server"><a  href='Tutorials.aspx'>Tutorials</a></li>
+
+
+<li id="liAssignment" runat="server"><a  href='Assignments.aspx'>Assignments</a></li>
+
+<li id="liInterview" runat="server" visible="false"><a  href='QuestionBank.aspx'>Interview Questions</a></li>
+                            
+       <li class="dropdown-container" id="li3" runat="server">
+            <a class="dropdown-button" href="Interview_Questions.aspx?lag=SQLSERVER">Interview Questions & Answers</a>
+            <ul class="dropdown-menu">
+                <li class="dropdown-item" id="list"><a href="Interview_Questions.aspx?lag=C" style=" color: #006495;font-weight:bold;"><span class="dropdown-icon"  style="position:relative;left:-10px;">🔤</span>C Language</a></li>
+                <li class="dropdown-item"><a href="Interview_Questions.aspx?lag=CPP" style=" color: #006495;font-weight:bold;"><span class="dropdown-icon" style="position:relative;left:-10px;">🔢</span>C++ Language</a></li>
+                <li class="dropdown-item"><a href="Interview_Questions.aspx?lag=JAVA" style=" color: #006495;font-weight:bold;"><span class="dropdown-icon" style="position:relative;left:-10px;">☕</span>Java Language</a></li>
+                <li class="dropdown-item"><a href="Interview_Questions.aspx?lag=ASP.NET" style=" color: #006495;font-weight:bold;"><span class="dropdown-icon" style="position:relative;left:-10px;">🌐</span>ASP.Net</a></li>
+                <li class="dropdown-item"><a href="Interview_Questions.aspx?lag=CSHARP" style=" color: #006495;font-weight:bold;"><span class="dropdown-icon" style="position:relative;left:-10px;">💻</span>CSharp.Net</a></li>
+                <li class="dropdown-item"><a href="Interview_Questions.aspx?lag=MVC" style=" color: #006495;font-weight:bold;"><span class="dropdown-icon" style="position:relative;left:-10px;">⚙️</span>ASP.NET MVC</a></li>
+                <li class="dropdown-item"><a href="Interview_Questions.aspx?lag=SQLSERVER" style=" color: #006495;font-weight:bold;"><span class="dropdown-icon" style="position:relative;left:-10px;">🗄️</span>SQL SERVER</a></li>
+                <li class="dropdown-item"><a href="Interview_Questions.aspx?lag=SSIS" style=" color: #006495;font-weight:bold;"><span class="dropdown-icon" style="position:relative;left:-10px;">📂</span>SSIS</a></li>
+                <li class="dropdown-item"><a href="Interview_Questions.aspx?lag=SSRS" style=" color: #006495;font-weight:bold;"><span class="dropdown-icon" style="position:relative;left:-10px;">📊</span>SSRS</a></li>
+                <li class="dropdown-item"><a href="Interview_Questions.aspx?lag=SSAS" style=" color: #006495;font-weight:bold;"><span class="dropdown-icon" style="position:relative;left:-10px;">📈</span>SSAS</a></li>
+                <li class="dropdown-item"><a href="Interview_Questions.aspx?lag=POWERBI" style=" color: #006495;font-weight:bold;"><span class="dropdown-icon" style="position:relative;left:-10px;">📉</span>POWER BI</a></li>
+                <li class="dropdown-item"><a href="Interview_Questions.aspx?lag=MANUALTESTING" style=" color: #006495;font-weight:bold;"><span class="dropdown-icon" style="position:relative;left:-10px;">🧪</span>Manual Testing</a></li>
+                <li class="dropdown-item"><a href="Interview_Questions.aspx?lag=SELENIUM" style=" color: #006495;font-weight:bold;"><span class="dropdown-icon" style="position:relative;left:-10px;">🤖</span>Selenium Testing</a></li>
+                <li class="dropdown-item"><a href="Interview_Questions.aspx?lag=WEBDESIGNING" style=" color: #006495;font-weight:bold;"><span class="dropdown-icon" style="position:relative;left:-10px;">🎨</span>Web Designing</a></li>
+            </ul>
+        </li>
+<li class="menu-container2" id="li11" runat="server"><a class="menu-button" >KnowledgeBase</a>
+    <ul class="menu-dropdown2">
+
+    <li class="menu-item2" style="position:relative;left:-24px;"> <a href="SqlServerKnowledgeBase.aspx"><span class="dropdown-icon">🗄️</span> SQL SERVER</a></li>
+    <li class="menu-item2" style="position:relative;left:-38px;"><a href="PowerBIKnowledgeBase.aspx"><span class="dropdown-icon">📉</span> POWER BI</a></li>
+    <li class="menu-item2" style="position:relative;left:-39px;"><a href="CSharpKnowledgeBase.aspx"><span class="dropdown-icon">💻</span> CSHARP</a></li>
+
+    <li class="menu-item2" style="position:relative;left:-44px;"><a href="Asp.NetKnowledgeBase.aspx"><span class="dropdown-icon">🌐</span> ASP.NET</a></li>
+    <li class="menu-item2" style="position:relative;left:-25px;"><a href="Asp.NetMVCKnowledgeBase.aspx" style="position:relative;left:4px;"><span class="dropdown-icon">⚙️</span> ASP.NET MVC</a></li>
+    <li class="menu-item2"><a href="EFKnowledgeBase.aspx"><span class="dropdown-icon">📘</span> ENTITY FRAMEWORK</a></li>
+
+    <li class="menu-item2" style="position:relative;left:-24px;"><a href="WebAPIKnowledgeBase.aspx" style="position:relative;left:-13px;"><span class="dropdown-icon">🔗</span> WEB API</a></li>
+    <li class="menu-item2" style="position:relative;left:-45px;"><a href="JQUERYKnowledgeBase.aspx"><span class="dropdown-icon">⚡</span> JQUERY</a></li>
+    <li class="menu-item2" style="position:relative;left:-23px;"><a href="AngularKnowledgeBase.aspx" style="position:relative;left:3px;"><span class="dropdown-icon">🅰️</span> ANGULAR JS</a></li>
+
+    <li class="menu-item2" style="position:relative;left:-16px;"><a href="CSharpKnowledgeBase.aspx"><span class="dropdown-icon">🎨</span> WEB DESIGNING</a></li>
+
+</ul>
+
+</li>
+
+
+<li id="li2" runat="server"><a  href='QuestionPapers.aspx'>Question Papers</a></li>
+    <li id="liArticles" runat="server"><a  href='Articles.aspx'>Articles</a></li>
+<li id="liDownloads" runat="server"><a  href='DownLoads.aspx'>DownLoads</a></li>                            
+
+<li id="liClients" runat="server"><a  href="clients.aspx">Clients</a></li>
+<%--<li id="liAbout" runat="server"><a href='About.aspx'>About</a></li>--%>
+
+<li id="liFaq" runat="server"><a  href='FAQ.aspx'>FAQ</a></li>
+<li  class="menu-container" id="li4" runat="server"><a class="dropbtn" >Books</a>
+    <ul class="menu-dropdown" style="width:640px;">
+
+<li class="menu-item" style="position:relative;left:-16px;"><a href="SqlServerBook.aspx"><span class="dropdown-icon">🗄️</span>SQL SERVER PROGRMMING BOOK</a></li>
+
+        <li class="menu-item" ><a href="C++ProgrammingBook.aspx"><span class="dropdown-icon">🔢</span>CPP PROGRMMING BOOK</a></li>
+<li class="menu-item" style="position:relative;left:-31px;"><a href="ASP.NETBook.aspx"><span class="dropdown-icon">🌐</span>ASP.NET PROGRMMING BOOK</a></li>
+
+<li class="menu-item" style="position:relative;left:2px;"><a href="JavaBook.aspx"><span class="dropdown-icon">☕</span>JAVA PROGRMMING BOOK</a></li>
+<li class="menu-item" style="position:relative;left:-8px;"><a href="ADVANCEJAVABook.aspx"><span class="dropdown-icon">☕</span>ADVANCE JAVA PROGRMMING BOOK</a></li>
+
+<li class="menu-item" style="position:relative;left:-9px;"><a href="CProgrammingBook.aspx"><span class="dropdown-icon">🔤</span>C PROGRMMING BOOK</a></li>
+
+<li class="menu-item" style="position:relative;left:-16px;"><a href="CSharpBook.aspx"><span class="dropdown-icon">💻</span>CSHARP.NET PROGRMMING BOOK</a></li>
+
+</ul>
+</li>
+
+<li id="liContact" runat="server"><a  href='contact.aspx'>Contact</a></li>
+
+
+
+
+
+  </ul>   
+        </nav>
+</div>
+</nav>
+<!---Banner Div Start Here-->
+<!--CallToAction ends-->
+
+
+
+
+
+
+
+
+
+
+<!--container-fluid end-->
+
+<div id="myfooter" class="foot clearfix" style="padding:10px;">
+<!--footer-->
+<div class="container-fluid footer">
+
+<div class="left-div col-lg-9 col-md-5">
+
+<!--        <p>Courses We Conduct</p> -->
+<ul class="col-lg-12 col-md-12 col-sm-12 footLi">
+<li><b> Course Contents </b></li> 
+<li><a href="c-training.aspx" class="foot-a">C</a></li>
+<li><a href="c++-training.aspx" class="foot-a">C++</a></li>
+<li><a href="FullStack-Java-Training.aspx" class="foot-a"> Full Stack Java</a></li>
+<li><a href="FullStack-.Net-Training.aspx" class="foot-a">Full Stack.Net </a></li>
+<li><a href=".Net_Core-Training.aspx" class="foot-a">.Net Core</a></li>
+
+<li><a href="sql-server-training.aspx" class="foot-a">SQL SERVER</a></li>
+<li><a href="power-bi-training.aspx" class="foot-a">POWERBI</a></li>
+<li><a href="Data-Analytics-Training.aspx" class="foot-a">Data Analytics</a></li>
+                        
+<li><a href="web-designing-course.aspx" class="foot-a">Web Designing</a></li>
+                        
+</ul>
+<div class="footsec1 col-lg-8 col-md-6"> 
+<!--        <p>Courses We Conduct</p> -->
+
+<ul class="col-lg-6 col-md-6 col-sm-12 ">
+<li><a href="Interview_Questions.aspx?lag=C" class="foot-a">C Interview Questions</a></li>
+<li><a href="Interview_Questions.aspx?lag=CPP" class="foot-a">C++ Interview Questions</a></li>
+<li><a href="Interview_Questions.aspx?lag=JAVA" class="foot-a">Java Interview Questions</a></li>
+<li><a href="Interview_Questions.aspx?lag=ADVANCEDJAVA" class="foot-a">Advanced Java Interview Questions</a></li>
+<li><a href="Interview_Questions.aspx?lag=CSHARP" class="foot-a">CSharp.Net Interview Questions</a></li>
+<li><a href="Interview_Questions.aspx?lag=ASP.NET" class="foot-a">ASP.Net Interview Questions</a></li>
+<li><a href="Interview_Questions.aspx?lag=MVC" class="foot-a">ASP.NET MVC Interview Questions</a></li>
+<li><a href="Interview_Questions.aspx?lag=WCF" class="foot-a">WCF Interview Questions</a></li>
+                      
+</ul>
+<ul class="col-lg-6 col-md-6 col-sm-12 ">
+<li><a href="Interview_Questions.aspx?lag=SQLSERVER" class="foot-a">SQL SERVER Interview Questions</a></li>
+                     
+<li><a href="Interview_Questions.aspx?lag=SSIS" class="foot-a">SSIS Interview Questions</a></li>
+<li><a href="Interview_Questions.aspx?lag=SSRS" class="foot-a">SSRS Interview Questions</a></li>
+<li><a href="Interview_Questions.aspx?lag=SSAS" class="foot-a">SSAS Interview Questions</a></li>
+<li><a href="Interview_Questions.aspx?lag=POWERBI" class="foot-a">POWERBI Interview Questions</a></li>
+<li><a href="Interview_Questions.aspx?lag=MANUALTESTING" class="foot-a">Software Testing Interview Questions</a></li>
+<li><a href="Interview_Questions.aspx?lag=SELENIUM" class="foot-a">Selenium Interview Questions</a></li>
+                  
+<li><a href="Interview_Questions.aspx?lag=WEBDESIGNING" class="foot-a">Web Designing Interview Questions</a></li>
+                       
+                     
+                        
+</ul>
+</div>
+        
+<div class="footsec2 col-lg-4 col-md-6">
+<ul class="clearfix ">
+<li><a href="index.aspx" class="foot-a">Home</a></li>
+<li><a href="About.aspx" class="foot-a">About us</a></li>
+<li><a href="index.aspx#crousel" class="foot-a">View Courses</a></li>
+<li><a href="Enosis_Learning_sitemap.html" class="foot-a">Site Link Map</a></li>
+<li><a class="cool-link" href="SampleResumes.aspx" >Sample Resumes</a> </li>
+
+<li><a class="cool-link" href="SubmitResume.aspx" >Freshers Upload Your Resume</a> </li>
+<li><a class="cool-link" href="Feedback_Form.aspx" >Feedback</a> </li>
+
+</ul>
+</div>
+           
+
+</div>
+<div class="right-div col-lg-3 col-md-5" style="float:right; margin-top:40px;">
+<ul >
+<li>
+<img src="images/footer-phone-icon.png" alt="phone icon" width="20" height="19" class="socialOn" />
+<span>7757012051 | 7757012052</span></li>
+<li >
+<img src="images/footer-email-icon.png" alt="email icon" width="20" height="20" class="socialOn" />
+<span>courses@enosislearning.com</span></li>
+<li><a href="http://www.facebook.com/pages/Enosis-learning/140657589442325?ref=ts&fref=ts">
+<img src="images/footer-facebook.png" alt="follow us on facebook" width="19" height="19" class="socialOn" />
+<span>Follow us on facebook</span></a></li>
+            
+
+<li><a href="http://www.linkedin.com/company/2762062?trk=tyah">
+<img src="images/footer-linkedin.png" alt="follow us on linkedin" width="20" height="19" class="socialOn" />
+<span>Follow us on linkedin</span></a></li>
+<li style="left:1px; position:relative"><a href="https://www.twitter.com/Enosislearning">
+<img src="images/footer-twitter.png" alt="follow us on twitter" width="19" height="19" class="socialOn" />
+<span>Follow us on twitter</span></a></li>
+</ul>
+
+</div>
+<section class="clearfix copyright">
+<span style="font-size: 12px; color: #fff;">Enosis Learning </span><span style="font-size: 12px; color: #D3ECF6;">All right are reserved | www.enosislearning.com 2024</span>
+</section>
+
+</div>
+              
+<!--COPYRIGHT-->
+</div>
+        
+</form>
+
+

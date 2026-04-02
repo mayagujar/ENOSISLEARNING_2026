@@ -1,0 +1,399 @@
+   <div class="container-fluid">
+         <div class="search-bar">
+              <div class="inline-div">
+                  <asp:TextBox ID="txtName" runat="server" CssClass="form-control"  placeholder="Name" />
+              </div>
+             <div class="inline-div">
+                 <asp:DropDownList Height="35px" AppendDataBoundItems="true" CssClass="form-control"  ID="drpEducation" runat="server">
+                 <asp:ListItem Value="0" Text="Qualification"></asp:ListItem>
+                 </asp:DropDownList>
+             </div> 
+             <div class="inline-div">
+                <asp:DropDownList Height="35px" AppendDataBoundItems="true"  CssClass="form-control" ID="drpYearPassing" runat="server">
+                 <asp:ListItem Value="0" Text="Passing Year" />
+                </asp:DropDownList>
+             </div>
+             <div class="inline-div">
+               <asp:DropDownList Height="35px" AppendDataBoundItems="true" CssClass="form-control"  ID="drpPositions" runat="server">
+               <asp:ListItem Value="0" Text="Select Position" /> 
+
+                            <asp:ListItem Value="Net Developer" Text="Net Developer" />
+                             <asp:ListItem Value="Java Developer" Text="Java Developer" />
+                             <asp:ListItem Value="Angular/React/NodeJS" Text="Angular/React/NodeJS" />
+                             <asp:ListItem Value="Python/Django" Text="Python/Django" />
+                           
+                             <asp:ListItem Value="Database/BI/DBA/Azure" Text="Database/BI/DBA/Azure" />
+                              <asp:ListItem Value="UI Designer/Developer" Text="UI Designer/Developer" />
+                              <asp:ListItem Value="Mobile Developer" Text="Mobile Developer" />
+                             
+                             <asp:ListItem Value="SEO/Digital Marketing" Text="SEO/Digital Marketing" />
+                               <asp:ListItem Value="Tester/QA" Text="Tester/QA" />
+                               <asp:ListItem Value="IT Support/Networking/AWS" Text="IT Support/Networking/AWS" />
+
+                            
+                             <asp:ListItem Value="Trainer" Text="Trainer" />
+                             <asp:ListItem Value="BDM/Counsellor" Text="BDM/Counsellor" />
+                             <asp:ListItem Value="HR Executive/Manager" Text="HR Executive" />
+                             <asp:ListItem Value="Intern" Text="Intern" />
+                             <asp:ListItem Value="Management Trainee" Text="Management Trainee" />
+                              <asp:ListItem Value="Business Analyst" Text="Business Analyst" />
+                              <asp:ListItem Value="Project Lead / Manager" Text="Project Lead / Manager" />
+
+                       
+               <%--<asp:ListItem Value="DBDev" Text="Database/BI Developer" />--%>
+               
+            </asp:DropDownList>
+             </div>
+             <div class="inline-div">
+               <asp:DropDownList Height="35px" AppendDataBoundItems="true" CssClass="form-control"  ID="drpExperience" runat="server">
+                  <asp:ListItem Value="0" Text="Experience" />
+               </asp:DropDownList>
+            </div> 
+             <div class="inline-div">
+               <asp:DropDownList Height="35px" AppendDataBoundItems="true" CssClass="form-control"  ID="drpType" runat="server">        
+                    <asp:ListItem Value="0" Text="Select Type" /> 
+                          <asp:ListItem Value="I" Text="I" />
+                    <asp:ListItem Value="O" Text="O" />
+               </asp:DropDownList>
+            </div> 
+             <div class="inline-div">
+               <asp:DropDownList Height="35px" AppendDataBoundItems="true" CssClass="form-control"  ID="drpstatus" runat="server">
+                
+                    <asp:ListItem Value="0" Text="Select Status" /> 
+         
+               </asp:DropDownList>
+            </div>
+             <div class="inline-div">
+               <asp:TextBox ID="txtSkills" runat="server" CssClass="form-control"  placeholder="Enter Your Skills" />   
+            </div>
+             <div class="inline-div">
+                 <asp:Button ID="btnSearch" Text="Search" runat="server" CssClass="btn btn-custom"  OnClick="btnSearch_Click" ></asp:Button>
+             </div> 
+             <div class="inline-div">
+                <asp:Button ID="btnAddCandidate" Text="Add Candidate" runat="server" CssClass="btn btn-custom" OnClick="btnAddCandidate_Click"/>
+             </div>
+         </div>
+<div class="gridview-area" style="background-color:transparent;">
+  <div id="tabs" class="tabs" style="border:none;width:100%;background-color:none">  
+      <ul style="background-color:none;border:none;">  
+          <li style="border-radius:5px;"><a href="#tabs-1" style="background-color:#6dbe4f;color:white;">ALL</a></li>  
+          <li style="border-radius:5px;"><a href="#tabs-2" style="background-color:#2d6fc8;color:white;">HOLD</a></li>  
+            <li style="border-radius:5px;"><a href="#tabs-3" style="background-color:#2d6fc8;color:white;">NOT INTERESTED</a></li>  
+        
+      </ul>  
+          <div id="tabs-1" style="width:100%;background-color:transparent;">  
+
+             
+        <asp:GridView ID="grvCandidatesDetail" OnRowCommand="grvCandidatesDetail_RowCommand" AutoGenerateColumns="false" runat="server"
+            DataKeyNames="CANDIDATE_CODE,FULLNAME" EmptyDataText="No records has been added."
+            AllowPaging="true" PageSize="5"  PagerSettings-Mode="NumericFirstLast" PagerStyle-HorizontalAlign="Right" PagerSettings-FirstPageText="First" PagerSettings-LastPageText="Last" Visible="true" OnPageIndexChanging="grvCandidatesDetail_PageIndexChanging" OnDataBound="grvCandidatesDetail_DataBound" ShowFooter="true" OnRowCreated="grvCandidatesDetail_RowCreated" BorderStyle="None" AlternatingRowStyle-BackColor="white"  AlternatingRowStyle-ForeColor="black" CssClass="table table-borderless gridview-table" FooterStyle-CssClass="footer" >
+
+            <PagerStyle HorizontalAlign = "Right" CssClass = "GridPager" BorderColor="White"/>
+
+            <Columns>
+<%--                <asp:HyperLinkField DataTextField="CANDIDATE_CODE" ControlStyle-CssClass="CANDIDATE_CODE" 
+    ItemStyle-ForeColor="Black" ControlStyle-ForeColor="Black" DataNavigateUrlFields="CANDIDATE_CODE" 
+    DataNavigateUrlFormatString="~/Profiles.aspx?REGNO={0}" HeaderText="RegNo" />--%>
+
+               <%-- <asp:HyperLinkField DataTextField="CANDIDATE_CODE" ControlStyle-CssClass="CANDIDATE_CODE" ItemStyle-ForeColor="Black" ControlStyle-ForeColor="Black" DataNavigateUrlFields="CANDIDATE_CODE" DataNavigateUrlFormatString="~/CandidatesReportCard.aspx?Id={0}" HeaderText="RegNo" />--%>
+
+                <%--<asp:BoundField DataField="CANDIDATE_CODE" HeaderText="RegNo"   />--%>
+                <asp:BoundField DataField="UPDATEDDATE" DataFormatString="{0:dd/MM/yy}" HeaderText="Applied-Date" HeaderStyle-Font-Bold="true" HeaderStyle-CssClass="gridview-header" FooterStyle-BorderStyle="None" ItemStyle-BorderStyle="None" HeaderStyle-BorderStyle="None"/>
+              
+                
+              
+                <asp:TemplateField HeaderText="Name" HeaderStyle-Font-Bold="true" HeaderStyle-CssClass="gridview-header" FooterStyle-BorderStyle="None" ItemStyle-BorderStyle="None" HeaderStyle-BorderStyle="None">
+                    <ItemTemplate>
+
+                         <asp:LinkButton ID="lnkView" Text ='<%# Eval("FULLNAME") %>' ForeColor="Blue" CssClass="gridview-item" CommandArgument='<%# Eval("RESUME") %>' runat="server" OnClick="OnView" ></asp:LinkButton>
+  
+                        
+
+
+
+                    </ItemTemplate>
+                    <FooterTemplate>
+                        <asp:TextBox ID="txtName" runat="server" CssClass="form-control" placeholder="Name" />
+                    </FooterTemplate>
+                </asp:TemplateField>
+               <%-- <asp:BoundField DataField="FULLNAME" ItemStyle-CssClass="FULLNAME" HeaderText="Name" />--%>
+
+
+              <%--  <asp:BoundField DataField="GENDER" HeaderText="Gender" />--%>
+                <asp:TemplateField HeaderText="Gender" HeaderStyle-Font-Bold="true" HeaderStyle-CssClass="gridview-header" FooterStyle-BorderStyle="None" ItemStyle-BorderStyle="None" HeaderStyle-BorderStyle="None">
+                    <ItemTemplate>
+                          <asp:Label Text='<%# Eval("Gender") %>'  CssClass="gridview-item" runat="server" />
+
+                    </ItemTemplate>
+                    <FooterTemplate>
+                       <%-- <asp:TextBox ID="txtGender" runat="server" Width="40px" Height="35px" placeholder="Gender" />--%>
+                        <asp:DropDownList ID="drpGender" runat="server" CssClass="form-control" Height="35px" >
+                            <asp:ListItem Text="M" Value="M" />
+                            <asp:ListItem Text="F" Value="F" />
+
+                        </asp:DropDownList>
+                    </FooterTemplate>
+                </asp:TemplateField>
+
+
+             <%--   <asp:BoundField DataField="DOB" HeaderText="DOB" />--%>
+                
+                   <asp:TemplateField HeaderText="Exp" HeaderStyle-CssClass="gridview-header" FooterStyle-BorderStyle="None" ItemStyle-BorderStyle="None" HeaderStyle-BorderStyle="None">
+                    <ItemTemplate>
+                          <asp:Label Text='<%# Eval("YEARSEXPERIENCE") %>' CssClass="gridview-item" runat="server" />
+
+                    </ItemTemplate>
+                    <FooterTemplate>
+                        <asp:TextBox ID="txtExp" runat="server" CssClass="form-control" placeholder="Exp" />
+                    </FooterTemplate>
+                </asp:TemplateField>
+
+             <%--   <asp:BoundField DataField="PACKAGE" HeaderText="Package" />--%>
+
+                 
+                   <asp:TemplateField HeaderText="PACKAGE" HeaderStyle-CssClass="gridview-header" FooterStyle-BorderStyle="None" ItemStyle-BorderStyle="None" HeaderStyle-BorderStyle="None">
+                    <ItemTemplate>
+                          <asp:Label Text='<%# Eval("PACKAGE") %>' CssClass="gridview-item"  runat="server" />
+
+                    </ItemTemplate>
+                    <FooterTemplate>
+                        <asp:TextBox ID="txtPackage" CssClass="form-control" runat="server" Text="0" />
+                    </FooterTemplate>
+                </asp:TemplateField>
+
+
+                <%-- <asp:BoundField DataField="NOTICEPERIOD" HeaderText="Notice" />--%>
+                   <asp:TemplateField HeaderText="NOTICE" HeaderStyle-CssClass="gridview-header" FooterStyle-BorderStyle="None" ItemStyle-BorderStyle="None" HeaderStyle-BorderStyle="None">
+                    <ItemTemplate>
+                          <asp:Label Text='<%# Eval("NOTICEPERIOD") %>' CssClass="gridview-item" runat="server" />
+
+                    </ItemTemplate>
+                    <FooterTemplate>
+                        <asp:TextBox ID="txtNotice" runat="server" CssClass="form-control" Text="0" />
+                    </FooterTemplate>
+                </asp:TemplateField>
+
+
+            <%--    <asp:BoundField DataField="MOBILENO" HeaderText="MobileNo" />--%>
+                 <asp:TemplateField HeaderText="MOBILENO" HeaderStyle-CssClass="gridview-header" FooterStyle-BorderStyle="None" ItemStyle-BorderStyle="None" HeaderStyle-BorderStyle="None">
+                    <ItemTemplate>
+                          <asp:Label Text='<%# Eval("MOBILENO") %>' CssClass="gridview-item"  runat="server" />
+
+                    </ItemTemplate>
+                    <FooterTemplate>
+                        <asp:TextBox CssClass="form-control" ID="txtMob" runat="server" placeholder="Mobile" />
+                    </FooterTemplate>
+                </asp:TemplateField>
+
+
+           <%--     <asp:BoundField DataField="EMAIL" ItemStyle-CssClass="email" HeaderText="EmailId" />--%>
+                  <asp:TemplateField HeaderText="EMAIL" HeaderStyle-CssClass="gridview-header" FooterStyle-BorderStyle="None" ItemStyle-BorderStyle="None" HeaderStyle-BorderStyle="None">
+                    <ItemTemplate>
+                          <asp:Label Text='<%# Eval("EMAIL") %>' CssClass="gridview-item"  runat="server" />
+
+                    </ItemTemplate>
+                    <FooterTemplate>
+                        <asp:TextBox CssClass="form-control" ID="txtEmail" runat="server" placeholder="Email"  />
+                    </FooterTemplate>
+                </asp:TemplateField>
+
+                <%--     <asp:BoundField DataField="SKILLS" ItemStyle-Font-Size="Smaller" HeaderText="Skills" />--%>
+
+                     <asp:TemplateField HeaderText="SKILLS" HeaderStyle-CssClass="gridview-header" FooterStyle-BorderStyle="None" ItemStyle-BorderStyle="None" HeaderStyle-BorderStyle="None">
+                    <ItemTemplate>
+                          <asp:Label Text='<%# Eval("SKILLS") %>' CssClass="gridview-item" runat="server" />
+
+                    </ItemTemplate>
+                    <FooterTemplate>
+                        <asp:TextBox CssClass="form-control" runat="server" placeholder="Skills" />
+                    </FooterTemplate>
+                </asp:TemplateField>
+
+
+                <%--   <asp:BoundField DataField="POSITION_APPLIED" ItemStyle-Width="30px" HeaderText="Position" />--%>
+                   <asp:TemplateField HeaderText="Position" HeaderStyle-CssClass="gridview-header" FooterStyle-BorderStyle="None" ItemStyle-BorderStyle="None" HeaderStyle-BorderStyle="None">
+                    <ItemTemplate>
+                          <asp:Label  Text='<%# Eval("POSITION_APPLIED") %>' CssClass="gridview-item"  runat="server" />
+
+                    </ItemTemplate>
+                    <FooterTemplate>
+                        <%--<asp:TextBox Width="60px" Height="35px" ID="txtPosition" runat="server" />  --%>
+                        <asp:DropDownList CssClass="form-control" ID="drpPosition"  runat="server">
+                                <asp:ListItem Value="-1" Text="Select Position" /> 
+            
+                             <asp:ListItem Value="Net Developer" Text="Net Developer" />
+                             <asp:ListItem Value="Java Developer" Text="Java Developer" />
+                             <asp:ListItem Value="Angular/React/NodeJS" Text="Angular/React/NodeJS" />
+                             <asp:ListItem Value="Python/Django" Text="Python/Django" />
+                           
+                             <asp:ListItem Value="Database/BI/DBA/Azure" Text="Database/BI/DBA/Azure" />
+                              <asp:ListItem Value="UI Designer/Developer" Text="UI Designer/Developer" />
+                              <asp:ListItem Value="Mobile Developer" Text="Mobile Developer" />
+                             
+                             <asp:ListItem Value="SEO/Digital Marketing" Text="SEO/Digital Marketing" />
+                               <asp:ListItem Value="Tester/QA" Text="Tester/QA" />
+                               <asp:ListItem Value="IT Support/Networking/AWS" Text="IT Support/Networking/AWS" />
+
+                            
+                             <asp:ListItem Value="Trainer" Text="Trainer" />
+                             <asp:ListItem Value="BDM/Counsellor" Text="BDM/Counsellor" />
+                             <asp:ListItem Value="HR Executive/Manager" Text="HR Executive/Manager" />
+                             <asp:ListItem Value="Intern" Text="Intern" />
+                             <asp:ListItem Value="Management Trainee" Text="Management Trainee" />
+                              <asp:ListItem Value="Business Analyst" Text="Business Analyst" />
+                              <asp:ListItem Value="Project Lead / Manager" Text="Project Lead / Manager" />
+                              
+
+                         </asp:DropDownList>
+                         
+                    </FooterTemplate>
+                </asp:TemplateField>
+
+
+              <%--  <asp:BoundField DataField="QUALIFICATION"  HeaderText="Qualification" />--%>
+                 <asp:TemplateField HeaderText="Qualification" HeaderStyle-CssClass="gridview-header" FooterStyle-BorderStyle="None" ItemStyle-BorderStyle="None" HeaderStyle-BorderStyle="None">
+                    <ItemTemplate>
+                          <asp:Label Text='<%# Eval("QUALIFICATION") %>' CssClass="gridview-item"  runat="server" />
+
+                    </ItemTemplate>
+                    <FooterTemplate>
+                        <%--<asp:TextBox Width="70px" Height="35px" ID="txtQualification" runat="server" />--%>
+
+                           <asp:DropDownList ID="drpQualifications" CssClass="form-control"  runat="server" required="true"  >
+                           </asp:DropDownList>
+                    </FooterTemplate>
+                </asp:TemplateField>
+                <%-- <asp:BoundField DataField="PASSINGYEAR" HeaderText="Pass-Year" />--%>
+
+
+                 <asp:TemplateField HeaderText="Pass-Year" HeaderStyle-CssClass="gridview-header" FooterStyle-BorderStyle="None" ItemStyle-BorderStyle="None" HeaderStyle-BorderStyle="None">
+                    <ItemTemplate>
+                          <asp:Label Text='<%# Eval("PASSINGYEAR") %>' CssClass="gridview-item"  runat="server" />
+
+                    </ItemTemplate>
+                    <FooterTemplate>
+            <%--            <asp:TextBox Width="40px" Height="35px" ID="txtPassingYear" runat="server" />
+            --%>
+                        <asp:DropDownList CssClass="form-control" ID="drpPassingYears"  runat="server" required="true" class="col-form-label"  >
+                           
+                              
+                 <asp:ListItem>1992</asp:ListItem>
+                             <asp:ListItem>1993</asp:ListItem>
+                             <asp:ListItem>1994</asp:ListItem>
+                            <asp:ListItem>1995</asp:ListItem>
+                            <asp:ListItem>1996</asp:ListItem>
+                            <asp:ListItem>1997</asp:ListItem>
+                            <asp:ListItem>1998</asp:ListItem>
+                            <asp:ListItem>1999</asp:ListItem>
+                            <asp:ListItem>2000</asp:ListItem>
+                            <asp:ListItem>2001</asp:ListItem>
+                            <asp:ListItem>2002</asp:ListItem>
+                            <asp:ListItem>2003</asp:ListItem>
+                            <asp:ListItem>2004</asp:ListItem>
+                            <asp:ListItem>2005</asp:ListItem>
+                            <asp:ListItem>2006</asp:ListItem>
+                            <asp:ListItem>2007</asp:ListItem>
+                            <asp:ListItem>2008</asp:ListItem>
+                            <asp:ListItem>2009</asp:ListItem>
+                            <asp:ListItem>2010</asp:ListItem>
+                            <asp:ListItem>2011</asp:ListItem>
+                            <asp:ListItem>2012</asp:ListItem>
+                            <asp:ListItem>2013</asp:ListItem>
+                            <asp:ListItem>2014</asp:ListItem>
+                            <asp:ListItem>2015</asp:ListItem>
+                            <asp:ListItem>2016</asp:ListItem>
+                            <asp:ListItem>2017</asp:ListItem>
+                            <asp:ListItem>2018</asp:ListItem>
+                            <asp:ListItem>2019</asp:ListItem>
+                            <asp:ListItem>2020</asp:ListItem>
+                             <asp:ListItem>2021</asp:ListItem>
+                             <asp:ListItem>2022</asp:ListItem>
+
+                         </asp:DropDownList>
+            
+                    </FooterTemplate>
+                </asp:TemplateField>
+                          
+                
+                    <asp:TemplateField HeaderText="Type" HeaderStyle-CssClass="gridview-header" FooterStyle-BorderStyle="None" ItemStyle-BorderStyle="None" HeaderStyle-BorderStyle="None">
+                    <ItemTemplate>
+                          <asp:Label  Text='<%# Eval("CAN_TYPE") %>' CssClass="gridview-item"  runat="server" />
+
+                    </ItemTemplate>
+                  <%--  <FooterTemplate>
+                        <asp:TextBox Width="20px" ID="txtCanType" runat="server" />
+                    </FooterTemplate>--%>
+                </asp:TemplateField>
+
+             
+                         
+        <asp:TemplateField HeaderText="Resume" HeaderStyle-CssClass="gridview-header" FooterStyle-BorderStyle="None" ItemStyle-BorderStyle="None" HeaderStyle-BorderStyle="None">
+            <ItemTemplate>
+
+                <asp:LinkButton ID="lnkDownload" CssClass="gridview-item" Text ='<%# Eval("RESUME") %>' 
+                    CommandArgument = '<%# Eval("RESUME") %>' runat="server" ForeColor="Blue"  OnClick="lnkDownload_Click"></asp:LinkButton>
+
+               
+                </ItemTemplate>
+            <FooterTemplate>
+                <asp:FileUpload Width="90px" Height="35px" ID="fResume" runat="server" />
+            </FooterTemplate>
+             
+        </asp:TemplateField>
+                
+        <asp:TemplateField HeaderText="Edit" HeaderStyle-CssClass="gridview-header" FooterStyle-BorderStyle="None" ItemStyle-BorderStyle="None" HeaderStyle-BorderStyle="None">
+                    <ItemTemplate>
+    <asp:ImageButton ID="btnEdit" runat="server" CausesValidation="false" ToolTip="Edit"  ForeColor="Blue"  CommandName="btnEdit" Text="Edit" width="40px" Height="35px" ImageUrl="~/img/edit.png" />
+  
+
+                    </ItemTemplate>
+            <FooterTemplate>
+                <%--<asp:Button ID="btnAdd" Height="35px" width="60px" Text="ADD" runat="server" OnClick="btnAdd_Click" />--%>
+                <asp:ImageButton ID="btnAdd" runat="server"
+Text="ADD" CommandName="AddNew" OnClick="btnAdd_Click1" ValidationGroup="add" ImageUrl="Images/plus-icon-13071.png" Width="30px" Height="30px"/> 
+            </FooterTemplate>
+        </asp:TemplateField>
+
+        <asp:TemplateField HeaderText="Goals" HeaderStyle-CssClass="gridview-header" FooterStyle-BorderStyle="None" ItemStyle-BorderStyle="None" HeaderStyle-BorderStyle="None">
+<ItemTemplate>
+<%--<a href="#"  onclick='openPopup("<%# Eval("FULLNAME")%>")'>Comme</a>--%>
+  <asp:LinkButton ID="btnViewGoals" CommandName="btnViewGoals" Text="Goals"  ForeColor="Blue"  ToolTip="View Goals" CausesValidation="false" CssClass="gridview-item" runat="server" />
+
+</ItemTemplate>
+</asp:TemplateField>
+
+                 <asp:TemplateField HeaderText="Status" HeaderStyle-CssClass="gridview-header" FooterStyle-BorderStyle="None" ItemStyle-BorderStyle="None" HeaderStyle-BorderStyle="None">
+<ItemTemplate>
+<%--<a href="#"  onclick='openPopup("<%# Eval("FULLNAME")%>")'>Comme</a>--%>
+  <asp:LinkButton ID="btnStatus" CommandName="btnStatus"   Text='<%# Eval("STATUS") %>' ForeColor="Blue"  ToolTip="Change Status" CausesValidation="false" CssClass="gridview-item" runat="server" />
+
+</ItemTemplate>
+</asp:TemplateField>
+
+                                 <asp:TemplateField HeaderText="Assessment" HeaderStyle-CssClass="gridview-header" FooterStyle-BorderStyle="None" ItemStyle-BorderStyle="None" HeaderStyle-BorderStyle="None">
+<ItemTemplate>
+<%--<a href="#"  onclick='openPopup("<%# Eval("FULLNAME")%>")'>Comme</a>--%>
+  <asp:LinkButton ID="btnAssessment" CommandName="btnAssessments"   Text="Assements" ForeColor="Blue"  ToolTip="Assessments" CausesValidation="false" CssClass="gridview-item" runat="server" />
+
+</ItemTemplate>
+</asp:TemplateField>
+
+               
+             
+             
+            </Columns>
+        </asp:GridView>
+
+   
+            </div>
+       <div id="tabs-2">  
+     <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.</p>  
+ </div>  
+            <div id="tabs-3">  
+    <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.</p>  
+</div>  
+    </div>
+    </div>
+</div>  
+    <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>

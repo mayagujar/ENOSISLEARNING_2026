@@ -1,0 +1,86 @@
+Which command is used to create a table?
+a) INSERT
+b) CREATE
+c) UPDATE
+d) SELECT
+
+Which DDL command is used to change table structure?
+a) MODIFY
+b) CHANGE
+c) ALTER
+d) UPDATE
+
+Which command deletes table structure permanently?
+a) DELETE
+b) DROP
+c) TRUNCATE
+d) REMOVE
+
+TRUNCATE is faster than DELETE because:
+a) It uses WHERE
+b) It removes structure
+c) It doesn’t log row-by-row
+d) It supports rollback
+
+Which command renames a table?
+a) ALTER
+b) RENAME
+c) CHANGE
+d) UPDATE
+
+Which command inserts data into table?
+a) ADD
+b) CREATE
+c) INSERT
+d) UPDATE
+
+Which command removes rows but keeps structure?
+a) DROP
+b) DELETE
+c) REMOVE
+d) CLEAR
+
+Which clause is mandatory in DELETE to avoid deleting all rows?
+a) GROUP BY
+b) ORDER BY
+c) WHERE
+d) HAVING
+
+Which DML command modifies existing data?
+a) INSERT
+b) UPDATE
+c) ALTER
+d) DROP
+
+DML commands can be rolled back.
+a) True
+b) False
+
+Create a table Students
+
+CREATE TABLE Students (
+    StudentID INT,
+    Name VARCHAR(50),
+    Email VARCHAR(100),
+    Age INT
+);
+
+Add a column Phone to Students table
+Change size of Email column
+Delete the table StudentDetails
+Insert one record
+Update salary of IT employees
+Display all employees
+What are constraints in SQL?
+
+Why constraints are used?
+
+Difference between PRIMARY KEY and UNIQUE
+
+Can a table have multiple UNIQUE constraints?
+
+Can PRIMARY KEY contain NULL?
+Difference between DELETE and TRUNCATE
+Can FOREIGN KEY accept NULL?
+
+What happens if we insert duplicate PRIMARY KEY?
